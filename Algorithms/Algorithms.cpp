@@ -13,6 +13,13 @@ struct OddElements
 		return element % 2 == 0;
 	}
 };
+struct ShowElement
+{
+	void operator()(const int& element)const
+	{
+		cout << element << " ";
+	}
+};
 
 int main()
 {
@@ -24,6 +31,13 @@ int main()
 
 	//any-of
 	cout << (any_of(v.begin(), v.end(), OddElements()) ? "1" : "2") << endl;
+
+	//rotate
+	for_each(v.begin(), v.end(), ShowElement());
+	cout << endl;
+	rotate(v.begin(), v.begin() + 2, v.end());
+	for_each(v.begin(), v.end(), ShowElement());
+	cout << endl;
 	
 
 	_getch();
