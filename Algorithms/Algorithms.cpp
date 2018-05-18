@@ -4,8 +4,17 @@
 
 using namespace std;
 
+struct OddElements
+{
+	bool operator()(const int& element)const
+	{
+		return element % 2 == 0;
+	}
+};
+
 int main()
 {
+	//all-of
 	_getch();
 	return 0;
 }
