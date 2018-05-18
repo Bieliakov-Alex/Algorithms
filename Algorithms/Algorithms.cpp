@@ -3,6 +3,7 @@
 #include <vector>
 #include <list>
 #include <conio.h>
+#include <random>
 
 using namespace std;
 
@@ -38,7 +39,28 @@ int main()
 	rotate(v.begin(), v.begin() + 2, v.end());
 	for_each(v.begin(), v.end(), ShowElement());
 	cout << endl;
+
+
+	//random_shuffle
+	for_each(v.begin(), v.end(), ShowElement());
+	cout << endl;
+	random_shuffle(v.begin(), v.end());
+	for_each(v.begin(), v.end(), ShowElement());
+	cout << endl;
+	cout << endl;
+
 	
+	//shuffle
+	for_each(v.begin(), v.end(), ShowElement());
+	cout << endl;
+	random_device rd;
+	mt19937 g(rd());
+	shuffle(v.begin(), v.end(), g);
+	for_each(v.begin(), v.end(), ShowElement());
+	cout << endl;
+	nth_element(v.begin(), v.begin() + 4, v.end());
+	for_each(v.begin(), v.end(), ShowElement());
+	cout << endl;
 
 	_getch();
 	return 0;
