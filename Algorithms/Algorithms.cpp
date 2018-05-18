@@ -16,11 +16,14 @@ struct OddElements
 
 int main()
 {
-	//vector<int> v({ 1,2,3,4,5,6,7,8 });
+	vector<int> v({ 1,2,3,4,5,6,7,8 });
 	//vector<int> v({ 2,4,6,8,10 });
-	list<int> v({ 2,4,6,8,10 });
+	//list<int> v({ 2,4,6,8,10 });
 	//all-of
 	cout << (all_of(v.begin(), v.end(), OddElements()) ? "All elements are odd": "Not all elements are odd") << endl;
+
+	//any-of
+	cout << (any_of(v.begin(), v.end(), OddElements()) ? "1" : "2") << endl;
 	
 
 	_getch();
